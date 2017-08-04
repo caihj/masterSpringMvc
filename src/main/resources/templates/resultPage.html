@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorator="layout/default">
+<head lang="zh">
+    <meta charset="UTF-8"/>
+    <title>Hello thymeleaf</title>
+</head>
+<body>
+
+<div class="row" layout:fragment="content">
+
+<link href="/webjars/materializecss/0.96.0/css/materialize.css" type="text/css" rel="stylesheet"/>
+
+<h2 class="indigo-text center" th:text="|Tweet results for search|"> Tweets</h2>
+
+    <ul class="collection">
+        <li class="collection-item avatar">
+
+        <img th:src="|//www.baidu.com/img/bd_logo1.png|" class="circle" />
+
+        <span class="title" th:text="|Amy|">UserName</span>
+        <p th:text="|the amy test|">tweet message</p>
+        </li>
+    </ul>
+
+</div>
+</body>
+</html>
