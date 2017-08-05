@@ -24,7 +24,7 @@ public class ChinaDateFormatter implements Formatter<LocalDate> {
     }
 
     public static String getPattern(Locale locale){
-        boolean isChina = Locale.CHINA.getCountry().equals(locale.getCountry());
+        boolean isChina = "zh".equals(locale.toString());
         System.out.println("country is "+locale.getCountry());
         System.out.println("locale is "+locale.toString());
         System.out.println("is china:"+isChina);

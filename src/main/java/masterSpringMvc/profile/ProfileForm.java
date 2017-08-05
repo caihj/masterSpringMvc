@@ -1,4 +1,4 @@
-package masterSpringMvc.dto;
+package masterSpringMvc.profile;
 
 import masterSpringMvc.date.PastLocalDate;
 import org.hibernate.validator.constraints.Email;
