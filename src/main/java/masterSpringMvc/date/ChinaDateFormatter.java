@@ -9,9 +9,9 @@ import java.util.Locale;
 
 public class ChinaDateFormatter implements Formatter<LocalDate> {
 
-    public static final String  CHINA_PATTERN = "yyyy/MM/dd";
+    public static final String  CHINA_PATTERN = "yyyy/M/d";
 
-    public static final String NORMAL_PATTERN ="dd/MM/yyyy";
+    public static final String NORMAL_PATTERN ="d/M/yyyy";
 
     @Override
     public LocalDate parse(String text, Locale locale) throws ParseException {
@@ -24,7 +24,7 @@ public class ChinaDateFormatter implements Formatter<LocalDate> {
     }
 
     public static String getPattern(Locale locale){
-        boolean isChina = "zh".equals(locale.toString());
+        boolean isChina = "CN".equals(locale.getCountry());
         System.out.println("country is "+locale.getCountry());
         System.out.println("locale is "+locale.toString());
         System.out.println("is china:"+isChina);

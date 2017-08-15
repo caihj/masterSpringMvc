@@ -12,15 +12,15 @@
 
 <link href="/webjars/materializecss/0.96.0/css/materialize.css" type="text/css" rel="stylesheet"/>
 
-<h2 class="indigo-text center" th:text="|Tweet results for search|"> Tweets</h2>
+<h2 class="indigo-text center" th:text="|Tweet results for ${search}|"> Tweets</h2>
 
     <ul class="collection">
-        <li class="collection-item avatar">
+        <li class="collection-item avatar" th:each="tweet:${tweets}">
 
-        <img th:src="|//www.baidu.com/img/bd_logo1.png|" class="circle" />
+        <img th:src="|${tweet.photo}|" class="circle" />
 
-        <span class="title" th:text="|Amy|">UserName</span>
-        <p th:text="|the amy test|">tweet message</p>
+        <span class="title" th:text="|${tweet.title}|">UserName</span>
+        <p th:text="|${tweet.text}|">tweet message</p>
         </li>
     </ul>
 

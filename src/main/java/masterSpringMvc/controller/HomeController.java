@@ -1,18 +1,29 @@
 package masterSpringMvc.controller;
 
+import masterSpringMvc.profile.UserProfileSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
-public class HelloController {
+import java.util.List;
 
-    @ResponseBody
+@Controller
+public class HomeController {
+
+    @Autowired
+    private UserProfileSession userProfileSession;
+
     @RequestMapping("/")
     public String hello(){
-        return "Hello, world!";
+
+         List<String> tastes = userProfileSession.getTastes();
+         if(tastes.isEmpty()){
+             return "redirect:/profile";
+         }
+         return "redirect:/search/mixed;keywords="+String.join(",",userProfileSession.getTastes());
     }
 
     @RequestMapping("/getPage")
